@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c3569;
 }
 
 @theme inline {
@@ -10,17 +10,148 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Digiratina brand palette */
+  --color-brand-navy: #282c68;
+  --color-brand-ink: #1c3569;
+  --color-brand-orange: #ee5c31;
+  --color-brand-mist: #ecf2fa;
+  --color-brand-steel: #94a0c8;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------------------------------------------------
+   Hero section primitives
+   --------------------------------------------------------------- */
+
+/* Faint blueprint grid, faded out towards the edges */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgb(148 160 200 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 160 200 / 0.12) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 35%,
+    #000 35%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 35%,
+    #000 35%,
+    transparent 100%
+  );
+}
+
+.presence-rise {
+  animation-name: presence-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes presence-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  12% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -140px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .presence-rise {
+    animation: none;
+    opacity: 0.45;
+    transform: none;
+  }
+}
+
+.logo-marquee {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 40s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track,
+.logo-marquee:focus-visible .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-marquee:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 6px;
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .logo-marquee-track {
+    animation: none;
+  }
+
+  .logo-marquee-clone {
+    display: none;
+  }
+}
+
+.closing-frame {
+  animation: closing-frame-pulse 3s ease-in-out infinite;
+}
+
+.closing-frame-delay {
+  animation-delay: 1.5s;
+}
+
+@keyframes closing-frame-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closing-frame {
+    animation: none;
+    opacity: 1;
+  }
 }
