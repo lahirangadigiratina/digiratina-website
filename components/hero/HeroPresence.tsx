@@ -133,10 +133,10 @@ export function HeroPresence() {
   const { label, countries } = heroContent.presence;
 
   return (
-    <div className="relative isolate flex justify-center">
+    <div className="relative isolate flex w-full justify-center">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 h-36 w-[22rem] -translate-x-1/2 -translate-y-1/2 overflow-hidden sm:w-[26rem]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-28 w-[min(100%,18rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden min-[480px]:h-36 min-[480px]:w-[22rem] sm:w-[26rem]"
       >
         {risingDots.map((dot, index) => (
           <span
@@ -151,27 +151,29 @@ export function HeroPresence() {
         ))}
       </div>
 
-      <div
-        className="relative inline-flex max-w-full items-center gap-2.5 rounded-full border border-brand-orange/50 bg-[#0b0d16] py-1 pl-1 pr-3.5 shadow-[0_10px_30px_rgb(0_0_0/0.28)] sm:gap-3 sm:py-1.5 sm:pl-1.5 sm:pr-4"
-        aria-label={`${label}: ${countries.map((country) => country.name).join(", ")}`}
-      >
-        <ul className="flex shrink-0 items-center pl-0.5">
-          {countries.map((country) => (
-            <li
-              key={country.code}
-              className="-ml-1.5 first:ml-0"
-              title={country.name}
-            >
-              <span className="relative block h-6 w-6 overflow-hidden rounded-full ring-2 ring-[#0b0d16] sm:h-7 sm:w-7">
-                <FlagArt code={country.code} />
-              </span>
-              <span className="sr-only">{country.name}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="whitespace-nowrap text-xs font-semibold tracking-tight text-white sm:text-sm">
-          {label}
-        </p>
+      <div className="hero-presence-scroll max-w-full overflow-x-auto px-1">
+        <div
+          className="relative mx-auto inline-flex w-max max-w-none items-center gap-1.5 rounded-full border border-brand-orange/50 bg-[#0b0d16] py-1 pl-1 pr-2.5 shadow-[0_10px_30px_rgb(0_0_0/0.28)] min-[480px]:gap-2 min-[480px]:pr-3 sm:gap-3 sm:py-1.5 sm:pl-1.5 sm:pr-4"
+          aria-label={`${label}: ${countries.map((country) => country.name).join(", ")}`}
+        >
+          <ul className="flex shrink-0 items-center pl-0.5">
+            {countries.map((country) => (
+              <li
+                key={country.code}
+                className="-ml-[0.3rem] first:ml-0 min-[480px]:-ml-1 sm:-ml-1.5"
+                title={country.name}
+              >
+                <span className="relative block h-[1.125rem] w-[1.125rem] overflow-hidden rounded-full ring-2 ring-[#0b0d16] min-[480px]:h-5 min-[480px]:w-5 sm:h-7 sm:w-7">
+                  <FlagArt code={country.code} />
+                </span>
+                <span className="sr-only">{country.name}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="shrink-0 text-[0.625rem] font-semibold tracking-tight text-white min-[480px]:text-[0.6875rem] sm:whitespace-nowrap sm:text-sm">
+            {label}
+          </p>
+        </div>
       </div>
     </div>
   );

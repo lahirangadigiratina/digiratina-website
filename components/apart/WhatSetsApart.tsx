@@ -1,10 +1,10 @@
 import { apartContent } from "@/content/apart";
 
 export function WhatSetsApart() {
-  const { title, description, elements, closing } = apartContent;
+  const { title, description, elements } = apartContent;
 
   return (
-    <section className="bg-brand-mist pb-20 pt-10 sm:pb-24 sm:pt-12 lg:pt-14">
+    <section className="bg-brand-mist pb-12 pt-10 sm:pb-14 sm:pt-12 lg:pt-14">
       <div className="mx-auto w-full max-w-[1320px] px-6 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[720px] text-center">
           <h2 className="text-3xl font-semibold tracking-[-0.03em] text-brand-navy sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -37,37 +37,6 @@ export function WhatSetsApart() {
             </li>
           ))}
         </ul>
-
-        <div className="relative mx-auto mt-16 max-w-[820px] px-8 py-12 sm:mt-20 sm:px-12 sm:py-14">
-          <span
-            aria-hidden="true"
-            className="closing-frame absolute left-0 top-0 h-8 w-8 origin-top-left border-l-2 border-t-2 border-brand-orange"
-          />
-          <span
-            aria-hidden="true"
-            className="closing-frame closing-frame-delay absolute right-0 top-0 h-8 w-8 origin-top-right border-r-2 border-t-2 border-brand-orange"
-          />
-          <span
-            aria-hidden="true"
-            className="closing-frame closing-frame-delay absolute bottom-0 left-0 h-8 w-8 origin-bottom-left border-b-2 border-l-2 border-brand-orange"
-          />
-          <span
-            aria-hidden="true"
-            className="closing-frame absolute bottom-0 right-0 h-8 w-8 origin-bottom-right border-b-2 border-r-2 border-brand-orange"
-          />
-
-          <p className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.24em] text-brand-orange">
-            Founded in 2018
-          </p>
-          <h2 className="mt-5 text-center text-[1.75rem] font-semibold tracking-[-0.035em] text-brand-navy sm:text-4xl sm:leading-[1.15]">
-            {closing.title.lead}{" "}
-            <span className="text-brand-orange">{closing.title.highlight}</span>{" "}
-            {closing.title.trail}
-          </h2>
-          <p className="mx-auto mt-6 max-w-[58ch] text-center text-base leading-relaxed text-brand-ink/70 sm:text-lg sm:leading-8">
-            {closing.body}
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -6,7 +6,19 @@ import { hireCta, navLinks } from "@/content/nav";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -27,7 +39,13 @@ export function Header() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
       <div className="pointer-events-auto mx-auto mt-4 w-[calc(100%-1.5rem)] max-w-[1180px] sm:mt-5 sm:w-[calc(100%-2rem)]">
-        <div className="flex items-center gap-3 rounded-full bg-white py-1.5 pl-4 pr-1.5 shadow-[0_10px_40px_rgb(40_44_104/0.16)] sm:pl-5">
+        <div
+          className={`flex items-center gap-3 rounded-full py-1.5 pl-4 pr-1.5 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ease-out sm:pl-5 ${
+            scrolled
+              ? "border border-white/50 bg-white/65 shadow-[0_8px_32px_rgb(40_44_104/0.14)] backdrop-blur-xl backdrop-saturate-150"
+              : "border border-transparent bg-white shadow-[0_10px_40px_rgb(40_44_104/0.16)]"
+          }`}
+        >
           <a href="/" className="flex shrink-0 items-center pl-1 pr-2 sm:pr-3">
             <Image
               src="/digiratina-logo.png"
@@ -60,7 +78,7 @@ export function Header() {
               className="group hidden h-11 items-center gap-2.5 rounded-full bg-brand-navy pl-5 pr-1.5 text-[0.875rem] font-semibold text-white transition duration-200 hover:bg-[#1f2358] sm:inline-flex"
             >
               {hireCta.label}
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 20 20"
@@ -68,7 +86,7 @@ export function Header() {
                   className="h-3.5 w-3.5"
                 >
                   <path
-                    d="M4 10h11M11 6l4 4-4 4"
+                    d="M6 14 14 6M8 6h6v6"
                     stroke="currentColor"
                     strokeWidth="1.8"
                     strokeLinecap="round"
@@ -110,7 +128,11 @@ export function Header() {
         <div
           id={panelId}
           hidden={!open}
-          className="mt-3 overflow-hidden rounded-[1.75rem] bg-white p-3 shadow-[0_16px_50px_rgb(40_44_104/0.18)] xl:hidden"
+          className={`mt-3 overflow-hidden rounded-[1.75rem] p-3 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ease-out xl:hidden ${
+            scrolled
+              ? "border border-white/50 bg-white/70 shadow-[0_12px_40px_rgb(40_44_104/0.14)] backdrop-blur-xl backdrop-saturate-150"
+              : "border border-transparent bg-white shadow-[0_16px_50px_rgb(40_44_104/0.18)]"
+          }`}
         >
           <nav aria-label="Mobile" className="flex flex-col">
             {navLinks.map((link) => (
@@ -136,7 +158,7 @@ export function Header() {
                 className="h-3.5 w-3.5"
               >
                 <path
-                  d="M4 10h11M11 6l4 4-4 4"
+                  d="M6 14 14 6M8 6h6v6"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"

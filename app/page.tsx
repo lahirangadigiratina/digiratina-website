@@ -1,4 +1,5 @@
 import { WhatSetsApart } from "@/components/apart/WhatSetsApart";
+import { CompanyIntro } from "@/components/company/CompanyIntro";
 import { CareerAdventure } from "@/components/careers/CareerAdventure";
 import { Faq } from "@/components/faq/Faq";
 import { Hero } from "@/components/hero/Hero";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="flex flex-1 flex-col">
       <Hero />
       <WhatSetsApart />
+      <CompanyIntro />
       <DiscoverServices />
       <ClientStories />
       <CareerAdventure />
