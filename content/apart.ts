@@ -6,18 +6,27 @@ export const apartContent = {
     {
       title: "Partner & Advisor",
       body: "We take pride in being a trusted partner and advisor to our clients, dedicated to driving success and achieving business goals at every step by being flexible and accommodating and growing with you",
+      coverImage: "/apart/partner-advisor-cover.jpg",
+      coverPosition: "center 32%",
+      illustration: "/apart/illustration-1.svg",
     },
     {
       title: "Complete Transparency Throughout",
       body: "We embrace complete transparency, fostering trust and collaboration throughout the project lifecycle with our valued clients",
+      coverImage: "/apart/cover-2.jpg",
+      illustration: "/apart/illustration-2.svg",
     },
     {
       title: "Product Engineering",
       body: "We are skilled in delivering products which exceed expectations, enabling disruption and business growth with limitless possibilities through a seamless experience",
+      coverImage: "/apart/cover-3.jpg",
+      illustration: "/apart/illustration-3.svg",
     },
     {
       title: "Decades of Industry Know-How",
       body: "Backed by a team with decades of industry know-how, we are committed to delivering cutting-edge solutions which cater to your unique needs and drive success",
+      coverImage: "/apart/cover-4.jpg",
+      illustration: "/apart/illustration-4.svg",
     },
   ],
 } as const;

@@ -1,3 +1,4 @@
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { heroContent } from "@/content/hero";
 import { HeroClients } from "./HeroClients";
 import { HeroPresence } from "./HeroPresence";
@@ -45,21 +46,11 @@ export function Hero() {
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-orange py-1 pl-5 pr-1 text-sm font-semibold tracking-tight text-white shadow-[0_12px_32px_-10px_rgb(238_92_49/0.75)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-orange/95 hover:shadow-[0_20px_46px_-12px_rgb(238_92_49/0.9)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-orange min-[480px]:gap-3 min-[480px]:pl-6 md:w-auto md:justify-start md:pl-7 md:text-base"
             >
               {primaryCta.label}
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-brand-navy transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 min-[480px]:h-10 min-[480px]:w-10 sm:h-12 sm:w-12">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 20 20"
-                  fill="none"
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-brand-navy min-[480px]:h-10 min-[480px]:w-10 sm:h-12 sm:w-12">
+                <ArrowIcon
                   className="h-3.5 w-3.5 min-[480px]:h-4 min-[480px]:w-4"
-                >
-                  <path
-                    d="M6 14 14 6M8 6h6v6"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                  durationClassName="duration-300 ease-out"
+                />
               </span>
             </a>
 

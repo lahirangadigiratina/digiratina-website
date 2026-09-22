@@ -1,3 +1,4 @@
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { insightsContent } from "@/content/insights";
 
 export function StayUpdated() {
@@ -28,21 +29,11 @@ export function StayUpdated() {
               className="group inline-flex items-center gap-3 rounded-full bg-brand-orange py-1 pl-6 pr-1 text-sm font-semibold tracking-tight text-white shadow-[0_12px_32px_-10px_rgb(238_92_49/0.75)] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-orange/95 hover:shadow-[0_20px_46px_-12px_rgb(238_92_49/0.9)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand-orange sm:pl-7 sm:text-base"
             >
               {primaryCta.label}
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-brand-navy transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:h-12 sm:w-12">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 20 20"
-                  fill="none"
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-brand-navy sm:h-12 sm:w-12">
+                <ArrowIcon
                   className="h-4 w-4"
-                >
-                  <path
-                    d="M6 14 14 6M8 6h6v6"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                  durationClassName="duration-300 ease-out"
+                />
               </span>
             </a>
 

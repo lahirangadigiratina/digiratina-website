@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 180" fill="none" role="img" aria-label="Partner and advisor consultation illustration">
+  <ellipse cx="140" cy="158" rx="108" ry="14" fill="#282C68" fill-opacity="0.07"/>
+
+  <!-- table -->
+  <path d="M44 128 140 88l96 40v28l-96 40-96-40v-28Z" fill="#ECF2FA" stroke="#94A0C8" stroke-width="1.5"/>
+  <path d="M92 108 140 88l48 20v20l-48 20-48-20v-20Z" fill="#fff" stroke="#94A0C8" stroke-width="1.5"/>
+
+  <!-- laptop -->
+  <path d="M118 98 154 84v18l-36 14v-18Z" fill="#282C68"/>
+  <path d="M120 100 152 88v12l-32 12v-12Z" fill="#1C3569"/>
+  <path d="M124 104h24v2H124z" fill="#EE5C31"/>
+  <path d="M124 108h16v2H124z" fill="#94A0C8"/>
+  <rect x="126" y="112" width="4" height="8" fill="#EE5C31"/>
+  <rect x="134" y="110" width="4" height="10" fill="#94A0C8"/>
+  <rect x="142" y="114" width="4" height="6" fill="#EE5C31"/>
+
+  <!-- documents -->
+  <path d="M158 92l22 10v16l-22-10V92Z" fill="#fff" stroke="#94A0C8" stroke-width="1.2"/>
+  <path d="M164 98h10M164 102h8M164 106h10" stroke="#94A0C8" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- advisor figure left -->
+  <circle cx="88" cy="78" r="9" fill="#fff" stroke="#282C68" stroke-width="2"/>
+  <path d="M78 96c4-8 16-8 20 0v14H78V96Z" fill="#282C68"/>
+  <path d="M82 88c2-3 8-3 10 0" stroke="#282C68" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- client figure right -->
+  <circle cx="188" cy="72" r="9" fill="#fff" stroke="#282C68" stroke-width="2"/>
+  <path d="M178 90c4-8 16-8 20 0v14h-20V90Z" fill="#EE5C31" fill-opacity="0.85"/>
+  <path d="M182 82c2-3 8-3 10 0" stroke="#282C68" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- gesture / connection -->
+  <path d="M108 86c12-6 28-6 40 0" stroke="#EE5C31" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0"/>
+  <path d="M128 74 140 86l14-16" stroke="#EE5C31" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- chart badge -->
+  <rect x="196" y="108" width="34" height="24" rx="3" fill="#fff" stroke="#282C68" stroke-width="1.5"/>
+  <rect x="202" y="118" width="5" height="10" rx="1" fill="#94A0C8"/>
+  <rect x="210" y="114" width="5" height="14" rx="1" fill="#EE5C31"/>
+  <rect x="218" y="120" width="5" height="8" rx="1" fill="#282C68"/>
+</svg>

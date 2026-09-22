@@ -1,5 +1,9 @@
 export const servicesContent = {
-  title: "Discover Our Services",
+  eyebrow: "What we offer",
+  title: {
+    lead: "Discover Our",
+    highlight: "Services",
+  },
   description:
     "Our skilled team is at the forefront of cutting-edge technologies delivering top-tier solutions that propel businesses to new heights. Unleash the power of our expertise and transform your vision into reality.",
   items: [

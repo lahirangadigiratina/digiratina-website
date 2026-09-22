@@ -1,5 +1,4 @@
 import { companyContent } from "@/content/company";
-import { CompanyIntroAbstract } from "./CompanyIntroAbstract";
 
 export function CompanyIntro() {
   const { eyebrow, title, body } = companyContent;
@@ -7,29 +6,39 @@ export function CompanyIntro() {
   return (
     <section
       id="about"
-      className="relative isolate scroll-mt-24 overflow-hidden bg-brand-navy pb-20 pt-16 sm:pb-24 sm:pt-20"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-brand-navy py-20 sm:py-24 lg:py-28"
     >
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgb(148_160_200/0.16)_0%,transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_100%,rgb(238_92_49/0.12)_0%,transparent_38%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_88%_18%,rgb(148_160_200/0.1)_0%,transparent_32%)]" />
+        <div className="hero-grid absolute inset-0 opacity-40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_-10%,rgb(148_160_200/0.2)_0%,transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgb(238_92_49/0.1)_0%,transparent_40%)]" />
       </div>
 
-      <CompanyIntroAbstract />
-
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-6 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-[820px] rounded-[1.75rem] border border-brand-navy/8 bg-white px-8 py-12 shadow-[0_16px_48px_rgb(40_44_104/0.08)] sm:px-12 sm:py-14">
-          <p className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.24em] text-brand-orange">
-            {eyebrow}
-          </p>
-          <h2 className="mt-5 text-center text-[1.75rem] font-semibold tracking-[-0.035em] text-brand-navy sm:text-4xl sm:leading-[1.15]">
-            {title.lead}{" "}
-            <span className="text-brand-orange">{title.highlight}</span>{" "}
-            {title.trail}
-          </h2>
-          <p className="mx-auto mt-6 max-w-[58ch] text-center text-base leading-relaxed text-brand-ink/70 sm:text-lg sm:leading-8">
-            {body}
-          </p>
+        <div className="mx-auto max-w-[780px]">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-brand-orange backdrop-blur-sm">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
+              {eyebrow}
+            </span>
+
+            <h2 className="mt-6 text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.035em] text-white sm:mt-7 sm:text-4xl sm:leading-[1.15] lg:text-[2.75rem]">
+              {title.lead}{" "}
+              <span className="bg-gradient-to-r from-brand-orange to-brand-mist bg-clip-text text-transparent">
+                {title.highlight}
+              </span>{" "}
+              {title.trail}
+            </h2>
+
+            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-brand-mist/80 sm:mt-7 sm:text-lg sm:leading-8">
+              {body}
+            </p>
+
+            <div
+              aria-hidden="true"
+              className="mt-8 h-px w-16 bg-gradient-to-r from-brand-orange to-transparent sm:mt-10"
+            />
+          </div>
         </div>
       </div>
     </section>

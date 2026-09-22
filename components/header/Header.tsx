@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useState } from "react";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { hireCta, navLinks } from "@/content/nav";
 
 export function Header() {
@@ -78,21 +79,8 @@ export function Header() {
               className="group hidden h-11 items-center gap-2.5 rounded-full bg-brand-navy pl-5 pr-1.5 text-[0.875rem] font-semibold text-white transition duration-200 hover:bg-[#1f2358] sm:inline-flex"
             >
               {hireCta.label}
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  className="h-3.5 w-3.5"
-                >
-                  <path
-                    d="M6 14 14 6M8 6h6v6"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10">
+                <ArrowIcon />
               </span>
             </a>
 
@@ -147,24 +135,11 @@ export function Header() {
             ))}
             <a
               href={hireCta.href}
-              className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-navy text-sm font-semibold text-white sm:hidden"
+              className="group mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-navy text-sm font-semibold text-white sm:hidden"
               onClick={() => setOpen(false)}
             >
               {hireCta.label}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                fill="none"
-                className="h-3.5 w-3.5"
-              >
-                <path
-                  d="M6 14 14 6M8 6h6v6"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <ArrowIcon />
             </a>
           </nav>
         </div>
